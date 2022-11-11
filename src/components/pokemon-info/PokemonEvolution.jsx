@@ -85,7 +85,7 @@ export const PokemonEvolutions = () => {
                 </div> :
                 <div className="flex flex-col items-center">
                     <p className="text-xl text-center text-slate-200 font-bold capitalize">evolution chain</p>
-                    <div className="flex flex-row items-center">
+                    <div className="flex flex-row max-[900px]:flex-col items-center">
                         {evols}            
                     </div>
                 </div> 
