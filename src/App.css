@@ -1,0 +1,295 @@
+/*-----------------
+  TAILWIND CONFIG
+-------------------*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/*-------------------
+  STYLING ANIMATIONS
+--------------------*/
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 5s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*-------------------
+    STYLING CARDS
+---------------------*/
+
+/* .bug {
+  background: #aedf78;
+}
+
+.water {
+  background: #43ccff;
+}
+
+.grass {
+  background: #00ca91;
+}
+
+.fire {
+  background: #e95c4d;
+}
+
+.normal {
+  background: #a5a5a5;
+}
+
+.poison {
+  background: #611380;
+}
+
+.electric {
+  background: #f9be00;
+}
+.ground {
+  background: #bfac21;
+}
+
+.fairy {
+  background: #f87ea7;
+}
+
+.fighting {
+  background: #e81319;
+}
+.psychic {
+  background: #8a0532;
+}
+
+.ghost {
+  background: #8e55a4;
+}
+.rock {
+  background: #776a3e;
+}
+.ice {
+  background: #66d1e5;
+}
+.flying {
+  background: #5eb9b2;
+}
+.dark {
+  background: #2d221c;
+}
+
+.dragon {
+  background: #29036a;
+}
+
+.steel {
+  background: #7b8e8a;
+}
+.unknown {
+  background: #454545;
+}
+
+.shadow {
+  background: #4f4f4f;
+} */
+
+.bug-text {
+  color: #aedf78;
+}
+
+.water-text {
+  color: #43ccff;
+}
+
+.grass-text {
+  color: #00ca91;
+}
+
+.fire-text {
+  color: #e95c4d;
+}
+
+.normal-text {
+  color: #a5a5a5;
+}
+
+.poison-text {
+  color: #611380;
+}
+
+.electric-text {
+  color: #f9be00;
+}
+.ground-text {
+  color: #bfac21;
+}
+
+.fairy-text {
+  color: #f87ea7;
+}
+
+.fighting-text {
+  color: #e81319;
+}
+.psychic-text {
+  color: #8a0532;
+}
+
+.ghost-text {
+  color: #8e55a4;
+}
+.rock-text {
+  color: #776a3e;
+}
+.ice-text {
+  color: #66d1e5;
+}
+.flying-text {
+  color: #5eb9b2;
+}
+.dark-text {
+  color: #2d221c;
+}
+
+.dragon-text {
+  color: #29036a;
+}
+
+.steel-text {
+  color: #7b8e8a;
+}
+.unknown-text {
+  color: #454545;
+}
+
+.shadow-text {
+  color: #4f4f4f;
+}
+
+
+/* --------------------
+    STYLING ICONS
+-----------------------*/
+/* .icon {
+  border-radius: 100%;
+  height: 100px;
+  width: 100px;
+  margin:auto;
+  transition: 200ms all;
+}
+
+.icon:hover{
+  filter: saturate(200%);
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.icon img {
+  height: 60%;
+  width: 60%;
+  margin: 20%;
+} */
+
+.bug {
+  background: #92BC2C;
+  box-shadow: 0 0 20px #92BC2C;
+}
+
+.dark {
+  background: #595761;
+  box-shadow: 0 0 20px #595761;
+}
+
+.dragon {
+  background: #0C69C8;
+  box-shadow: 0 0 20px #0C69C8;
+}
+
+.electric {
+  background: #F2D94E;
+  box-shadow: 0 0 20px #F2D94E;
+}
+
+.fire {
+  background: #FBA54C;
+  box-shadow: 0 0 20px #FBA54C;
+}
+
+.fairy {
+  background: #EE90E6;
+  box-shadow: 0 0 20px #EE90E6;
+}
+
+.fighting {
+  background: #D3425F;
+  box-shadow: 0 0 20px #D3425F;
+}
+
+.flying {
+  background: #A1BBEC;
+  box-shadow: 0 0 20px #A1BBEC;
+}
+
+.ghost {
+  background: #5F6DBC;
+  box-shadow: 0 0 20px #5F6DBC;
+}
+
+.grass {
+  background: #5FBD58;
+  box-shadow: 0 0 20px #5FBD58;
+}
+
+.ground {
+  background: #DA7C4D;
+  box-shadow: 0 0 20px #DA7C4D;
+}
+
+.ice {
+  background: #75D0C1;
+  box-shadow: 0 0 20px #75D0C1;
+}
+
+.normal {
+  background: #A0A29F;
+  box-shadow: 0 0 20px #A0A29F;
+}
+
+.poison {
+  background: #B763CF;
+  box-shadow: 0 0 20px #B763CF;
+}
+
+.psychic {
+  background: #FA8581;
+  box-shadow: 0 0 20px #FA8581;
+}
+
+.rock {
+  background: #C9BB8A;
+  box-shadow: 0 0 20px #C9BB8A;
+}
+
+.steel {
+  background: #5695A3;
+  box-shadow: 0 0 20px #5695A3;
+}
+
+.water {
+  background: #539DDF;
+  box-shadow: 0 0 20px #539DDF;
+}
+
+/*-------------------
+  RESPONSIVE DESIGN
+    Media-Queries
+---------------------*/
+
