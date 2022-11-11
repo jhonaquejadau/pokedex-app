@@ -70,7 +70,7 @@ export const PokemonEvolutions = () => {
     const evols = evolsArray.map( (pokemon, index) => {
         return (
             <div key={index} className="flex flex-col items-center shadow-xl rounded mx-4">
-                <img className="w-[15em] h-[15em] max-[768px]:w-[13em] max-[768px]:h-[13em] border-2 " src={pokemon.img} alt={pokemon.name}/>
+                <img className="w-[15em] h-[15em] max-[768px]:w-[13em] max-[768px]:h-[13em] border-2 max-[900px]:my-2" src={pokemon.img} alt={pokemon.name}/>
                 <p className="text-slate-200 text-xl capitalize">{pokemon.name}</p>
             </div>
         )
