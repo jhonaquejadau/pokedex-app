@@ -1,6 +1,6 @@
 {
   "name": "pokedex-app",
-  "home": "https://jhonaquejadau.github.io/pokedex-app/",
+  "homepage": "https://jhonaquejadau.github.io/pokedex-app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
