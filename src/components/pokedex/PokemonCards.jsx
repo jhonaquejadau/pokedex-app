@@ -1,16 +1,14 @@
-import React, {useContext} from "react";
+import React from "react";
 import {Link} from "react-router-dom"
-import { ContextConsumer } from "../../context/Context";
 
-export const PokemonCards = () => {
-    const {allPokemons} = useContext(ContextConsumer)
-
+export const PokemonCards = ({pokemons}) => {
+ 
     let condition = [];
-    if (allPokemons){
-        if(allPokemons.array){
-            condition = allPokemons.array
+    if (pokemons){
+        if(pokemons.array){
+            condition = pokemons.array
         } else {
-            condition = allPokemons.pokemon
+            condition = pokemons.pokemon
         }
     }  else {
         condition = []

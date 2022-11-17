@@ -2,8 +2,9 @@ import React, { useContext, useState } from "react";
 import { ContextConsumer } from "../../context/Context";
 import {BiSearchAlt} from "react-icons/bi"
 
-export const SearchPokemon = () => {
-    const {allPokemons, setAllPokemons} = useContext(ContextConsumer)
+export const SearchPokemon = ({pokemons, setPokemons}) => {
+
+    const {pokemonContext} = useContext(ContextConsumer)
     const [toggleTypes, setToggleTypes] = useState(false)
     const [formData, setFormData] = useState({searchInput: ""})
 
@@ -11,9 +12,9 @@ export const SearchPokemon = () => {
 
     const handleRandomPokemon = (array) => {
         const newArray = array.map(item => item).sort(() => Math.random() - 0.5)
-        setAllPokemons(prev => {
+        setPokemons(prev => {
             return {
-                ...prev,
+                ...prev, 
                 array: newArray
             }
         })
@@ -21,19 +22,17 @@ export const SearchPokemon = () => {
 
     const handleFilterTypes = (type) => {
             if (type === "all") {
-                setAllPokemons(() => {
+                setPokemons(() => {
                     return {
-                        pokemon: allPokemons.pokemon,
-                        types: allPokemons.types,
-                        pokemonWeakness: allPokemons.pokemonWeakness
+                        pokemon: pokemons.pokemon
                     }
                 })
             }
             else {
-                const pokemonFiltered = allPokemons.pokemon.filter(pokemon => pokemon.types.some(pokemonType => pokemonType.type.name === type))
-                setAllPokemons(prev => {
+                const pokemonFiltered = pokemons.pokemon.filter(pokemon => pokemon.types.some(pokemonType => pokemonType.type.name === type))
+                setPokemons(prev => {
                     return {
-                        ...prev,
+                        ...prev, 
                         array: pokemonFiltered
                     }
                 })
@@ -58,17 +57,16 @@ export const SearchPokemon = () => {
     const handleSearch = (array) => {
         const pokemonSearched = array.filter((pokemon) => pokemon.name === formData.searchInput)
         if(formData.searchInput === ""){
-            setAllPokemons(() => {
+            setPokemons(() => {
                 return {
-                    pokemon: allPokemons.pokemon,
-                    types: allPokemons.types,
-                    pokemonWeakness: allPokemons.pokemonWeakness
+                    pokemon: pokemons.pokemon
                 }
             })
+            console.log(pokemons)
         } else {
-            setAllPokemons(prev => {
+            setPokemons(prev => {
                 return {
-                    ...prev,
+                    ...prev, 
                     array: pokemonSearched
                 }
             })
@@ -82,26 +80,25 @@ export const SearchPokemon = () => {
 
         let sorted = [];
         if (option === '0') {
-            sorted = allPokemons.pokemon.map(pokemon => pokemon).sort((a,b) => a.id > b.id ? 1 : -1)
+            sorted = pokemons.pokemon.map(pokemon => pokemon).sort((a,b) => a.id > b.id ? 1 : -1)
         } else if (option === '1') {
-            sorted = allPokemons.pokemon.map(pokemon => pokemon).sort((a,b) => a.id > b.id ? -1 : 1)
+            sorted = pokemons.pokemon.map(pokemon => pokemon).sort((a,b) => a.id > b.id ? -1 : 1)
         } else if (option === '2') {
-            sorted = allPokemons.pokemon.map(pokemon => pokemon).sort((a,b) => a.name > b.name ? 1 : -1)
+            sorted = pokemons.pokemon.map(pokemon => pokemon).sort((a,b) => a.name > b.name ? 1 : -1)
         } else if (option === '3') {
-            sorted = allPokemons.pokemon.map(pokemon => pokemon).sort((a,b) => a.name > b.name ? -1 : 1)
+            sorted = pokemons.pokemon.map(pokemon => pokemon).sort((a,b) => a.name > b.name ? -1 : 1)
         } else {
-            sorted = allPokemons.pokemon
+            sorted = pokemons.pokemon
         }
-
-        setAllPokemons(prev => {
+        setPokemons(prev => {
             return {
-                ...prev,
+                ...prev, 
                 array: sorted
             }
         })
     }
 
-    const buttonsFilter = allPokemons && allPokemons.types.map((type, index) => {
+    const buttonsFilter = pokemonContext && pokemonContext.types.map((type, index) => {
         return (
             <button key={index} onClick={() => handleFilterTypes(type.name)} className={`${type.name} mx-1 px-6 rounded-xl text-xs text-white font-medium`}>{type.name}</button>
         )
@@ -122,14 +119,14 @@ export const SearchPokemon = () => {
                             value={formData.searchInput.toLowerCase()}
                             onChange={handleForm}
                         />
-                        <button onClick={() => handleSearch(allPokemons.pokemon)} type="submit" className="text-4xl max-[520px]:my-2"><BiSearchAlt/></button>
+                        <button onClick={() => handleSearch(pokemons.pokemon)} type="submit" className="text-4xl max-[520px]:my-2"><BiSearchAlt/></button>
                     </div>
                 </form>
                 
                 <div className="flex flex-col text-center">
                     <h3 className="text-xl font-bold capitalize">custom search</h3>
                     <div className="flex flex-row items-center justify-around mt-2 max-[760px]:flex-col">
-                        <button onClick={() => handleRandomPokemon(allPokemons.pokemon)} className="bg-slate-300 px-6 rounded-xl py-[4px] shadow-xl max-[760px]:w-[100%]">Random</button>
+                        <button onClick={() => handleRandomPokemon(pokemons.pokemon)} className="bg-slate-300 px-6 rounded-xl py-[4px] shadow-xl max-[760px]:w-[100%]">Random</button>
                         <button onClick={() => handleTypesList()} className="bg-slate-300 rounded-xl px-6 py-[4px] shadow-xl mx-10 max-[760px]:my-4 max-[760px]:w-[100%]">Type</button>
                         <div className="flex items-center">
                             <p className="mr-2 text-slate-600">Order by:</p>

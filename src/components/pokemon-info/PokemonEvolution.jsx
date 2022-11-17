@@ -1,70 +1,35 @@
-import React, { useState, useContext, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { ContextConsumer } from "../../context/Context";
+import React from "react";
 // import {BsArrowRight} from "react-icons/bs"
 // import {BsArrowDown} from "react-icons/bs"
 
-export const PokemonEvolutions = () => {
-    const {name} = useParams();
-    const {allPokemons} = useContext(ContextConsumer);
-    const filterPokemon = allPokemons.pokemon.filter(pokemon => pokemon.name === name);
-    const pokemon = filterPokemon[0];
-    const [pokemonSpecies, setPokemonSpecies] = useState();
+export const PokemonEvolutions = ({pokemons, species, name}) => {
 
-    const evolutions = [];
-
-    async function getPokemonEvols (){
-        
-        const getPokemonSpecies = async (id) => {
-            const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`)
-            const data = await response.json()
-            return data
-        }
-
-        const species = await getPokemonSpecies(pokemon.id)
-        const resEvols = await fetch(species.evolution_chain.url)
-        const dataEvols = await resEvols.json()
-
-        setPokemonSpecies({species: species, evolutions: dataEvols})
-    }
-
-    useEffect(() => {
-        getPokemonEvols()    
-    },[])
+    const filterPokemon = pokemons.pokemon.length > 0 && pokemons.pokemon.filter(pokemon => pokemon.name === name);
+    const pokemon = filterPokemon[0]
     
+    const evolutions = [];
+ 
     /**HANDLING EVOLUTIONS DATA */
-    if(pokemonSpecies) {
-
-        if(pokemonSpecies.evolutions.chain.evolves_to.length > 0){
-            const baseName = pokemonSpecies.evolutions.chain.species.name
-            const baseEvol = allPokemons.pokemon.filter(pokemon => pokemon.name === baseName)
-            const firstEvolName = pokemonSpecies.evolutions.chain.evolves_to[0].species.name
-            const firstEvol = allPokemons.pokemon.filter(pokemon => pokemon.name === firstEvolName)
+    if (pokemons.pokemon.length > 0){
+        if(species.evolutions && species.evolutions.chain.evolves_to.length > 0){
+            const baseName = species.evolutions.chain.species.name
+            const baseEvol = pokemons.pokemon.filter(pokemon => pokemon.name === baseName)
+            const firstEvolName = species.evolutions.chain.evolves_to[0].species.name
+            const firstEvol = pokemons.pokemon.filter(pokemon => pokemon.name === firstEvolName)
             evolutions.push(baseEvol[0], firstEvol[0])
-            if (pokemonSpecies.evolutions.chain.evolves_to[0].evolves_to.length > 0){
-                const secondEvolName = pokemonSpecies.evolutions.chain.evolves_to[0].evolves_to[0].species.name
-                const secondEvol = allPokemons.pokemon.filter(pokemon => pokemon.name === secondEvolName)
+            if (species.evolutions.chain.evolves_to[0].evolves_to.length > 0){
+                const secondEvolName = species.evolutions.chain.evolves_to[0].evolves_to[0].species.name
+                const secondEvol = pokemons.pokemon.filter(pokemon => pokemon.name === secondEvolName)
                 evolutions.push(secondEvol[0])
-                // setEvolutions(prev => [...prev, secondEvol[0]])
-            } 
+            } else {
+                evolutions.pop()
+            }
         } else {
             evolutions.splice(0, evolutions.length)
             evolutions.push(pokemon)
-            console.log('THIS pokemon has no evolutions')
-            // setEvolutions(pokemon[0])
         }
-    } else {
-        console.log('CHARGING DATA')
-    }
-    
-        
-    
-    
-    
-    
-    
-    // const ev = evolutions.map()
-    // console.log(pokemonSpecies && evolutions[1])
+    } 
+
     const evolsArray = evolutions.filter(evols => evols !== undefined)
     
     const evols = evolsArray.map( (pokemon, index) => {
@@ -78,7 +43,7 @@ export const PokemonEvolutions = () => {
 
     return (
         <div className="flex flex-col items-center md:flex-row">
-            {pokemonSpecies && pokemonSpecies.evolutions.chain.evolves_to.length === 0 ? 
+            {species.evolutions && species.evolutions.chain.evolves_to.length === 0 ? 
                 <div className="flex flex-col justify-center items-center">
                     <p className="text-xl text-center text-slate-200 font-bold">This pokemons has no evolutions</p>
                     {evols}
