@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { ContextConsumer } from "../../context/Context";
 import {BiSearchAlt} from "react-icons/bi"
 
-export const SearchPokemon = ({pokemons, setPokemons}) => {
+export const SearchPokemon = ({pokemons, setPokemons, count, setCount}) => {
 
     const {pokemonContext} = useContext(ContextConsumer)
     const [toggleTypes, setToggleTypes] = useState(false)
@@ -18,6 +18,8 @@ export const SearchPokemon = ({pokemons, setPokemons}) => {
                 array: newArray
             }
         })
+
+        setCount(prev => prev + 1)
     }
 
     const handleFilterTypes = (type) => {
@@ -125,7 +127,8 @@ export const SearchPokemon = ({pokemons, setPokemons}) => {
                 
                 <div className="flex flex-col text-center">
                     <h3 className="text-xl font-bold capitalize">custom search</h3>
-                    <div className="flex flex-row items-center justify-around mt-2 max-[760px]:flex-col">
+                    <p className=" animate-pulse text-center capitalize">click RANDOM more than 3 time to unlock random game!!</p>
+                    <div className="flex flex-row items-center justify-around mt-2 max-[760px]:flex-col">    
                         <button onClick={() => handleRandomPokemon(pokemons.pokemon)} className="bg-slate-300 px-6 rounded-xl py-[4px] shadow-xl max-[760px]:w-[100%]">Random</button>
                         <button onClick={() => handleTypesList()} className="bg-slate-300 rounded-xl px-6 py-[4px] shadow-xl mx-10 max-[760px]:my-4 max-[760px]:w-[100%]">Type</button>
                         <div className="flex items-center">

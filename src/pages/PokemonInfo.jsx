@@ -9,6 +9,8 @@ import { PokemonWeakness } from "../components/pokemon-info/PokemonWeakness";
 import {AiOutlineClose} from "react-icons/ai"
 
 export const PokemonInfo = ({pokemons}) => {
+    console.log('INFO')
+    console.log(pokemons)
     
     const {name} = useParams();
     const [pokemonSpecies, setPokemonSpecies] = useState({});
@@ -59,10 +61,12 @@ export const PokemonInfo = ({pokemons}) => {
         <>
             { pokemons.pokemon.length === 0  ? 
             (
-                <Pokeball />
+                <div className="flex justify-center items-center h-[90vh]">
+                    <Pokeball />
+                </div>
             ) :
             (
-                <div className="my-4 mx-auto shadow rounded-xl p-6">
+                <div className="my-4 mx-auto shadow rounded-xl p-6 border-4">
 
                     <Link to="/pokedex/">
                         <button className="text-2xl shadow"><AiOutlineClose /></button> 
@@ -83,7 +87,7 @@ export const PokemonInfo = ({pokemons}) => {
                                 <div className=" w-[90%] my-0 mx-auto">
                                     <div className="flex flex-col justify-center items-center">
                                         <p className={`${pokemon && pokemon.background}-text text-center text-2xl shadow px-4 border uppercase font-bold`}>description</p>
-                                        <p className="text-center my-2 mx-auto">{pokemon && pokemonSpecies.species.flavor_text_entries[0].flavor_text}</p>
+                                        <p className="text-center my-2 mx-auto">{pokemonSpecies.species && pokemonSpecies.species.flavor_text_entries[0].flavor_text}</p>
                                     </div>
                                     {classes}
                                 </div>
