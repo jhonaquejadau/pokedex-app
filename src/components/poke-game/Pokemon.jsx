@@ -27,7 +27,7 @@ export const Pokemon = ({pokemons}) => {
                         <img className="shadow-xl rounded-xl w-[25em] h-[25em]" src={pokemon[random].img} alt={pokemon[random].name} />
                     </div>
                     <Link to="/pokedex">
-                        <button className="uppercase text-white font-bold rounded-xl animate-bounce bg-gradient-to-r from-violet-500 to-fuchsia-500 py-1 px-6">
+                        <button className="fixed uppercase text-white font-bold rounded-xl animate-bounce bg-gradient-to-r from-violet-500 to-fuchsia-500 py-2 px-8 bottom-10 left-[45%]">
                             go back to pokedex
                         </button>
                     </Link>
