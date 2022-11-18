@@ -13,6 +13,10 @@
   .App-logo {
     animation: App-logo-spin infinite 5s linear;
   }
+
+  .pokeball-move {
+    animation: Move infinite alternate-reverse 5s;
+  }
 }
 
 @keyframes App-logo-spin {
@@ -23,6 +27,23 @@
     transform: rotate(360deg);
   }
 }
+@keyframes Move {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  100% {
+    transform: translateX(1610px) rotate(360deg);
+  }
+}
+
+/* @keyframes backward {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  100% {
+    transform: translateX(1000px) rotate(360deg);
+  }
+} */
 
 /*-------------------
     STYLING CARDS

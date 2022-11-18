@@ -7,7 +7,6 @@ import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { Pokedex } from "./pages/Pokedex";
 import { PokemonInfo } from "./pages/PokemonInfo";
-import { Pokeball } from "./components/Pokeball";
 import { PokeGame } from "./pages/PokeGame";
 
 function App() {
@@ -55,14 +54,12 @@ function App() {
 
   return (
     <div>
-      <Header />
       <Routes>
         <Route exact path="/" element={<Home />}></Route>
         <Route path="/pokedex" element={<Pokedex pokemons={pokemons} setPokemons={setPokemons}/>}></Route>
         <Route path={`/pokedex/:name`} element={<PokemonInfo pokemons={pokemons} />}></Route>
         <Route path={`/pokedex/pokemon/:name`} element={<PokeGame pokemons={pokemons} />}></Route>
       </Routes>
-      <Footer/>
     </div>
   );
 }

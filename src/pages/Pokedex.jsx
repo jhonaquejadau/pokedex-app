@@ -10,7 +10,7 @@ export const Pokedex = ({pokemons, setPokemons}) => {
     const [count, setCount] = useState(0);
 
     return (
-        <div className={`${pokemons.pokemon.length > 0 ? 'h-[100%]' : 'h-[90vh]'} flex flex-col items-center p-4 `}>
+        <div className={`${pokemons.pokemon.length > 0 ? 'h-[100%]' : 'h-[100vh]'} flex flex-col items-center p-4 `}>
             <SearchPokemon pokemons={pokemons} setPokemons={setPokemons} count={count} setCount={setCount}/>
             <div className={`${count > 3 ? 'static' : 'hidden'} border-4`}>
                 <p className="text-xl animation-bounce capitalize">click here to get a surprise, just fun...</p>
