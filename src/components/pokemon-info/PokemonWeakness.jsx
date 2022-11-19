@@ -1,7 +1,7 @@
 import React, { useEffect, useState} from "react";
-import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-export const PokemonWeakness = ({pokemons, name}) => {
+export const PokemonWeakness = ({pokemons, name, setPokemons}) => {
 
     const filterPokemon = pokemons.pokemon && pokemons.pokemon.filter(pokemon => pokemon.name === name)
     const pokemon = filterPokemon[0]
@@ -27,10 +27,28 @@ export const PokemonWeakness = ({pokemons, name}) => {
         getPokemonWeakness()
     }, [])
 
+    const handleFilterTypes = (type) => {
+        const pokemonFiltered = pokemons.pokemon.filter(pokemon => pokemon.types.some(pokemonType => pokemonType.type.name === type))
+            setPokemons(() => {
+            return {
+                pokemon: pokemons.pokemon, 
+                array: pokemonFiltered
+            }
+        })
+    }
+
     // MAPPING POKEMON WEAKNESS
     const pokemonWeaknessDiv = [...new Set(pokemonWeakness)].map((weakness, index) => {
         return (
-            <div key={index+1} className={`${weakness.name} rounded-xl w-[5em] text-center text-slate-100`}>{weakness.name}</div>
+            <Link to="/pokedex">
+                <div 
+                    key={index+1} 
+                    className={`${weakness.name} rounded-xl w-[5em] text-center text-slate-100 cursor-pointer`}
+                    onClick={() => handleFilterTypes(weakness.name)}
+                >
+                        {weakness.name}
+                </div>
+            </Link>
         )
     })
     

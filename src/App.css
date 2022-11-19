@@ -17,6 +17,34 @@
   .pokeball-move {
     animation: Move infinite alternate-reverse 5s;
   }
+
+  .bounce1 {
+    animation: Bouncing 2s linear infinite;
+    /* animation-delay: 0.2s; */
+  }
+  .bounce2 {
+    animation: Bouncing 2s linear infinite;
+    animation-delay: 0.4s;
+  }
+  .bounce3 {
+    animation: Bouncing 2s linear infinite;
+    animation-delay: 0.6s;
+  }
+  .bounce4 {
+    animation: Bouncing 2s linear infinite;
+    animation-delay: 0.8s;
+  }
+
+}
+
+.bounce:nth-child(2){
+  animation-delay: 0.2s;
+}
+.bounce:nth-child(3){
+  animation-delay: 0.4s;
+}
+.bounce:nth-child(4){
+  animation-delay: 0.6s;
 }
 
 @keyframes App-logo-spin {
@@ -27,12 +55,25 @@
     transform: rotate(360deg);
   }
 }
+
 @keyframes Move {
   0% {
     transform: translateX(0) rotate(0deg);
   }
   100% {
     transform: translateX(1610px) rotate(360deg);
+  }
+}
+
+@keyframes Bouncing {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-150px) rotate(360deg);
+  }
+  100% {
+    transform: translateY(0) rotate(360deg);
   }
 }
 

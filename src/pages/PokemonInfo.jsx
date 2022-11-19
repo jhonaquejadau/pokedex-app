@@ -8,14 +8,16 @@ import { PokemonEvolutions } from "../components/pokemon-info/PokemonEvolution";
 import { PokemonWeakness } from "../components/pokemon-info/PokemonWeakness";
 import {AiOutlineClose} from "react-icons/ai"
 
-export const PokemonInfo = ({pokemons}) => {
+export const PokemonInfo = ({pokemons, setPokemons}) => {
     
     const {name} = useParams();
     const [pokemonSpecies, setPokemonSpecies] = useState({});
     const filterPokemon = pokemons.pokemon.length > 0 && pokemons.pokemon.filter(pokemon => pokemon.name === name);
-    const pokemon = filterPokemon[0];
+    const pokemon = pokemons.change ? pokemons.change[0] : filterPokemon[0];
     const id = pokemon && pokemon.id
-    
+
+    console.log('pokemon')
+    console.log(pokemon)
     //FETCHING POKEMON SPECIES
     
     async function getEvolutions () {
@@ -47,11 +49,13 @@ export const PokemonInfo = ({pokemons}) => {
     // MAPPING POKEMON TYPES
     const classes = pokemon && pokemon.types.map((type, index) => {
         return (
-            <div key={index} 
-                className={`${type.type.name} text-slate-100 text-center text-xl rounded capitalize px-[2em] my-2`}
-            > 
-                {type.type.name}
-            </div>
+            <Link to="/pokedex">
+                <div key={index} 
+                    className={`${type.type.name} text-slate-100 text-center text-xl rounded capitalize px-[2em] my-2`}
+                > 
+                    {type.type.name}
+                </div>
+            </Link>
         )
     })
  
@@ -128,12 +132,14 @@ export const PokemonInfo = ({pokemons}) => {
                             <p className="text-xl text-slate-100 font-bold uppercase p-2 rounded shadow-xl">weaknesses</p>
                             <PokemonWeakness 
                                 pokemons={pokemons}
+                                setPokemons={setPokemons}
                                 name={name}
                             />
                         </div>
                         <PokemonEvolutions 
                             species={pokemonSpecies} 
-                            pokemons={pokemons} 
+                            pokemons={pokemons}
+                            setPokemons={setPokemons} 
                             name={name}
                         />
                     </div>

@@ -3,8 +3,6 @@ import {Routes,Route} from "react-router-dom"
 import './App.css';
 
 import { Home } from './pages/Home';
-import { Header } from './components/Header';
-import { Footer } from './components/Footer';
 import { Pokedex } from "./pages/Pokedex";
 import { PokemonInfo } from "./pages/PokemonInfo";
 import { PokeGame } from "./pages/PokeGame";
@@ -57,7 +55,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />}></Route>
         <Route path="/pokedex" element={<Pokedex pokemons={pokemons} setPokemons={setPokemons}/>}></Route>
-        <Route path={`/pokedex/:name`} element={<PokemonInfo pokemons={pokemons} />}></Route>
+        <Route path={`/pokedex/:name`} element={<PokemonInfo pokemons={pokemons} setPokemons={setPokemons} />}></Route>
         <Route path={`/pokedex/pokemon/:name`} element={<PokeGame pokemons={pokemons} />}></Route>
       </Routes>
     </div>
