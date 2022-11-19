@@ -6,6 +6,7 @@ import { Home } from './pages/Home';
 import { Pokedex } from "./pages/Pokedex";
 import { PokemonInfo } from "./pages/PokemonInfo";
 import { PokeGame } from "./pages/PokeGame";
+import { PokedexOptions } from "./pages/PokedexOptions";
 
 function App() {
 
@@ -54,9 +55,10 @@ function App() {
     <div>
       <Routes>
         <Route exact path="/" element={<Home />}></Route>
+        <Route path="/pokedex-options" element={<PokedexOptions/>}></Route>
         <Route path="/pokedex" element={<Pokedex pokemons={pokemons} setPokemons={setPokemons}/>}></Route>
         <Route path={`/pokedex/:name`} element={<PokemonInfo pokemons={pokemons} setPokemons={setPokemons} />}></Route>
-        <Route path={`/pokedex/pokemon/:name`} element={<PokeGame pokemons={pokemons} />}></Route>
+        <Route path={`/pokerandom/:name`} element={<PokeGame pokemons={pokemons} />}></Route>
       </Routes>
     </div>
   );

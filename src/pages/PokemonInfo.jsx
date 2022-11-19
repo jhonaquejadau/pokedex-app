@@ -49,13 +49,11 @@ export const PokemonInfo = ({pokemons, setPokemons}) => {
     // MAPPING POKEMON TYPES
     const classes = pokemon && pokemon.types.map((type, index) => {
         return (
-            <Link to="/pokedex">
-                <div key={index} 
-                    className={`${type.type.name} text-slate-100 text-center text-xl rounded capitalize px-[2em] my-2`}
-                > 
-                    {type.type.name}
-                </div>
-            </Link>
+            <div key={index} 
+                className={`${type.type.name} text-slate-100 text-center text-xl rounded capitalize px-[2em] my-2`}
+            > 
+                {type.type.name}
+            </div>
         )
     })
  

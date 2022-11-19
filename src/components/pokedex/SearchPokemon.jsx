@@ -1,8 +1,9 @@
 import React, { useContext, useState } from "react";
+import {Link} from "react-router-dom"
 import { ContextConsumer } from "../../context/Context";
 import {BiSearchAlt} from "react-icons/bi"
 
-export const SearchPokemon = ({pokemons, setPokemons, count, setCount}) => {
+export const SearchPokemon = ({pokemons, setPokemons}) => {
 
     const {pokemonContext} = useContext(ContextConsumer)
     const [toggleTypes, setToggleTypes] = useState(false)
@@ -18,8 +19,6 @@ export const SearchPokemon = ({pokemons, setPokemons, count, setCount}) => {
                 array: newArray
             }
         })
-
-        setCount(prev => prev + 1)
     }
 
     const handleFilterTypes = (type) => {
@@ -109,6 +108,9 @@ export const SearchPokemon = ({pokemons, setPokemons, count, setCount}) => {
     return (
         <div className="flex flex-col items-center shadow-xl rounded-xl w-[80%] mb-4 p-4 max-[1000px]:w-[100%]">
             <h2 className="text-3xl text-slate-400 font-bold mb-2 w-[90%] text-center max-[800px]:text-2xl">SELECT SEARCH THAT YOU MOST LIKE</h2>
+            <Link to="/pokedex-options">
+                <button className="text-xl py-1 px-6 rounded-xl capitalize bg-cyan-500 my-2 text-slate-200 ">go back to options!!</button>
+            </Link>
             <div className="flex flex-col justify-around items-center p-4 shadow-xl w-[90%] max-[520px]:shadow-none max-[520px]:w-[100%] max-[520px]:p-0 xl:border-4 xl:w-[80%] xl:flex-row ">
                 <form className="flex flex-col justify-center w-[100%] xl:w-fit " onSubmit={handleForm}>
                     <p className="text-xl font-bold my-0 mx-auto max-[520px]:text-center">Search by Name</p>
@@ -127,7 +129,6 @@ export const SearchPokemon = ({pokemons, setPokemons, count, setCount}) => {
                 
                 <div className="flex flex-col text-center">
                     <h3 className="text-xl font-bold capitalize">custom search</h3>
-                    <p className=" animate-pulse text-center capitalize">click RANDOM more than 3 time to unlock random game!!</p>
                     <div className="flex flex-row items-center justify-around mt-2 max-[760px]:flex-col">    
                         <button onClick={() => handleRandomPokemon(pokemons.pokemon)} className="bg-slate-300 px-6 rounded-xl py-[4px] shadow-xl max-[760px]:w-[100%]">Random</button>
                         <button onClick={() => handleTypesList()} className="bg-slate-300 rounded-xl px-6 py-[4px] shadow-xl mx-10 max-[760px]:my-4 max-[760px]:w-[100%]">Type</button>

@@ -26,11 +26,18 @@ export const Pokemon = ({pokemons}) => {
                         <p className="text-slate-100 font-bold uppercase text-4xl">{ pokemon[random].name}</p>
                         <img className="shadow-xl rounded-xl w-[25em] h-[25em]" src={pokemon[random].img} alt={pokemon[random].name} />
                     </div>
-                    <Link to="/pokedex">
-                        <button className="fixed uppercase text-white font-bold rounded-xl animate-bounce bg-gradient-to-r from-violet-500 to-fuchsia-500 py-2 px-8 bottom-10 left-[45%]">
-                            go back to pokedex
-                        </button>
-                    </Link>
+                    <div className="flex flex-row justify-center items-center bottom-0 fixed w-full bottom-20 max-[900px]:flex-col">
+                        <Link to="/pokedex-options">
+                            <button className=" uppercase text-white font-bold rounded-xl animate-bounce bg-gradient-to-r from-violet-500 to-fuchsia-500 py-2 px-8 mx-2 max-[900px]:my-2">
+                                go back to options
+                            </button>
+                        </Link>
+                        <Link to="/pokedex">
+                            <button className=" uppercase text-white font-bold rounded-xl animate-bounce bg-gradient-to-r from-sky-500 to-indigo-500 py-2 px-8 mx-2 max-[900px]:my-2">
+                                go to pokedex
+                            </button>
+                        </Link>
+                    </div>
                 </div>
             )}
         </>
