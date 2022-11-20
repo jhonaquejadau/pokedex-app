@@ -12,24 +12,25 @@
 Let's take a overview about the project and it's features.
 
 ### `Pokedex`
-<img src="src/assets/images/search.png" alt="search" />
-<img src="src/assets/images/typeslider.png" alt="typeslider" />
-<img src="src/assets/images/pokedex.png" alt="pokedex" />
+
+<img src="src/assets/images/search.PNG" alt="search" />
+<img src="src/assets/images/typeslider.PNG" alt="typeslider" />
+<img src="src/assets/images/pokedex.PNG" alt="pokedex" />
 
 ### `Pokemon Information`
-<img src="src/assets/images/pokemoninfo.png" alt="pokemoninfo" />
+<img src="src/assets/images/pokemoninfo.PNG" alt="pokemoninfo" />
 
 ### `Pokemon Random Page`
-<img src="src/assets/images/randomdesktop.png" alt="randomdesktop" />
+<img src="src/assets/images/randomdesktop.PNG" alt="randomdesktop" />
 
 ### `Mobile Version`
 
-<img src="src/assets/images/pokedexphone.png" alt="pokedexphone" width="250"/>&nbsp;&nbsp;&nbsp;&nbsp;
-<img src="src/assets/images/pokedextwocols.png" alt="pokedextwocols" width="250"/>&nbsp;&nbsp;&nbsp;&nbsp;
-<img src="src/assets/images/pokedexthreecols.png" alt="pokedexthreecols" width="250"/>&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="src/assets/images/pokedexphone.PNG" alt="pokedexphone" width="250"/>&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="src/assets/images/pokedextwocols.PNG" alt="pokedextwocols" width="250"/>&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="src/assets/images/pokedexthreecols.PNG" alt="pokedexthreecols" width="250"/>&nbsp;&nbsp;&nbsp;&nbsp;
 
-<img src="src/assets/images/random1.png" alt="random1" width="250"/>&nbsp;&nbsp;&nbsp;&nbsp;
-<img src="src/assets/images/random2.png" alt="random2" width="250"/>&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="src/assets/images/random1.PNG" alt="random1" width="250"/>&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="src/assets/images/random2.PNG" alt="random2" width="250"/>&nbsp;&nbsp;&nbsp;&nbsp;
 
 # Versions
 
