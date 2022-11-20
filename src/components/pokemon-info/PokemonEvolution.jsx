@@ -2,11 +2,10 @@ import React from "react";
 // import {BsArrowRight} from "react-icons/bs"
 // import {BsArrowDown} from "react-icons/bs"
 
-export const PokemonEvolutions = ({pokemons, setPokemons, species, name}) => {
+export const PokemonEvolutions = (pokemons, setPokemons, species, name) => {
 
     const filterPokemon = pokemons.pokemon.length > 0 && pokemons.pokemon.filter(pokemon => pokemon.name === name);
     const pokemon = filterPokemon[0]
-    
     const evolutions = [];
  
     /**HANDLING EVOLUTIONS DATA */
@@ -21,9 +20,7 @@ export const PokemonEvolutions = ({pokemons, setPokemons, species, name}) => {
                 const secondEvolName = species.evolutions.chain.evolves_to[0].evolves_to[0].species.name
                 const secondEvol = pokemons.pokemon.filter(pokemon => pokemon.name === secondEvolName)
                 evolutions.push(secondEvol[0])
-            } else {
-                evolutions.pop()
-            }
+            } 
         } else {
             evolutions.splice(0, evolutions.length)
             evolutions.push(pokemon)
@@ -66,13 +63,6 @@ export const PokemonEvolutions = ({pokemons, setPokemons, species, name}) => {
                     </div>
                 </div> 
             }
-            {/* {pokemonSpecies && evols(evolutions[0])}
-            <BsArrowDown className="min-[768px]:hidden text-slate-200 text-2xl my-2"/>
-            <BsArrowRight className="max-[768px]:hidden text-slate-200 text-2xl"/>
-            {pokemonSpecies && evols(evolutions[1])}
-            <BsArrowDown className="min-[768px]:hidden text-slate-200 text-2xl my-2"/>
-            <BsArrowRight className="max-[768px]:hidden text-slate-200 text-2xl"/>
-            {pokemonSpecies && evols(evolutions[2])} */}
         </div>
     )
 }

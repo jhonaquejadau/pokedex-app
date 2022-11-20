@@ -42,18 +42,13 @@ export const PokemonCards = ({pokemons}) => {
                     <div className="flex flex-row mt-2 shadow p-2">
                         {classes}
                     </div>
-                    {/* <div className="hidden xl:flex xl:flex-row xl:w-fit xl:my-0 xl:mx-auto">
-                        <p className="my-2 mx-0.5 p-2 shadow-xl bg-slate-100/[0.2] text-white text-xs rounded-2xl "><span className="font-bold">Base Experience:</span> {card.base_experience}</p>
-                        <p className="my-2 mx-0.5 p-2 shadow-xl bg-slate-100/[0.2] text-white text-xs rounded-2xl "><span className="font-bold">Height:</span> {card.height}</p>
-                        <p className="my-2 mx-0.5 p-2 shadow-xl bg-slate-100/[0.2] text-white text-xs rounded-2xl "><span className="font-bold">Weight:</span> {card.weight}</p>
-                    </div> */}
-                </div>
+                </div> 
             </Link>
         )
     })
 
     return (
-        <div className="w-[80%] grid grid-cols-4 p-2 gap-2 max-[900px]:grid-cols-2 max-[1000px]:w-[100%] max-[520px]:flex max-[520px]:flex-col ">
+        <div className="w-[90%] grid grid-cols-4 p-2 gap-2 max-[900px]:grid-cols-2 max-[1000px]:w-[100%] max-[520px]:flex max-[520px]:flex-col max-[1250px]:grid max-[1250px]:grid-cols-3  ">
             {cards}
         </div>
     )

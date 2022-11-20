@@ -7,10 +7,10 @@ import ultra from "../assets/ultra.png"
 
 export const PokedexOptions = () => {
     return ( 
-        <div className="w-full h-[100vh] flex flex-col justify-around items-center p-6 border-4">
-            <p className="z-20 uppercase text-slate-400 font-bold max-[900px]:text-3xl text-5xl text-center w-[80%] shadow-xl">how do you see your pokedex ?</p>
+        <div className="w-full h-[100vh] flex flex-col justify-around items-center p-6">
+            <p className="z-20 uppercase text-slate-400 font-bold max-[900px]:text-3xl text-5xl text-center w-[80%] shadow-xl">select one pokedex!!</p>
 
-            <div className="z-10 flex flex-row justify-around items-center my-4 w-[90%] max-[1100px]:grid max-[1100px]:grid-cols-2 max-[1100px]:w-[70%] ">
+            <div className="z-10 flex flex-row justify-around items-center my-4 w-[90%] max-[1100px]:flex-col">
                 
                 <Link to="/pokedex">
                     <div className="flex justify-center items-center w-[300px] h-[200px]   max-[1100px]:my-2 max-[900px]:w-[300px] max-[900px]:h-[200px] min-[1450px]:w-[400px]  min-[1450px]:h-[300px] rounded-xl bg-gradient-to-r from-sky-500 to-indigo-500 shadow-xl">

@@ -8,7 +8,6 @@ export const Pokemon = ({pokemons}) => {
 
     const pokemon = pokemons.pokemon.length > 0 && pokemons.pokemon
     const [random, setRandom] = useState(Math.floor(Math.random() * pokemon.length))
-    console.log(pokemon)
 
     const handleRandom = () => {
         setRandom(Math.floor(Math.random() * pokemon.length))
@@ -27,7 +26,7 @@ export const Pokemon = ({pokemons}) => {
     return (
         <>
             {pokemon && (
-                <div className={`${pokemon[random].background} flex flex-col items-center w-full h-[100%] p-4`}>
+                <div className={`${pokemon[random].background} flex flex-col justify-around items-center w-full h-[100%] min-[900px]:h-[100vh] p-4`}>
                     
                     {/* RANDOM POKEMON */}
                     <div onClick={handleRandom} className="flex flex-col justify-around items-center shadow rounded p-2 w-fit fixed top-5 left-5">
@@ -51,12 +50,16 @@ export const Pokemon = ({pokemons}) => {
                                 </div>
                             </div>
                             {/* STATS */}
-                            <div className="w-[600px] p-4 shadow-xl max-[630px]:w-[400px] max-[500px]:w-[350px] max-[420px]:w-[300px] mt-2">
-                                    <p className="text-6xl font-bold text-slate-200 opacity-40 uppercase">stats</p>
-                                    {/* <PokemonStats pokemon={pokemon}/> */}
+                            <div className="w-[90%] p-4 shadow-xl mt-2">
+                                    <p className="text-6xl font-bold text-slate-200 opacity-40 uppercase max-[900px]:text-4xl">stats</p>
                                     {PokemonStats(pokemon[random])}
                             </div>
                         </div>
+
+                        <div className="flex flex-row justify-center items-center">
+                            
+                        </div>
+
                     </div>
 
                     {/* NAVIGATION BUTTONS */}

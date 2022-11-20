@@ -9,7 +9,7 @@ import { PokemonWeakness } from "../components/pokemon-info/PokemonWeakness";
 import {AiOutlineClose} from "react-icons/ai"
 
 export const PokemonInfo = ({pokemons, setPokemons}) => {
-
+    console.log(pokemons)
     const {name} = useParams();
     const [pokemonSpecies, setPokemonSpecies] = useState({});
     const filterPokemon = pokemons.pokemon.length > 0 && pokemons.pokemon.filter(pokemon => pokemon.name === name);
@@ -141,12 +141,13 @@ export const PokemonInfo = ({pokemons, setPokemons}) => {
                                 name={name}
                             />
                         </div>
-                        <PokemonEvolutions 
+                        {/* <PokemonEvolutions 
                             species={pokemonSpecies} 
                             pokemons={pokemons}
                             setPokemons={setPokemons} 
                             name={name}
-                        />
+                        /> */}
+                        {PokemonEvolutions(pokemons, setPokemons, pokemonSpecies, name)}
                     </div>
 
                 </div>

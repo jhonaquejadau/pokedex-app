@@ -53,7 +53,7 @@ export const PokemonWeakness = ({pokemons, name, setPokemons}) => {
     })
     
     return (
-        <div className="grid grid-cols-3 items-center gap-2 p-2 border-2 max-[450px]:grid-cols-2 sm:grid-cols-4 xl:grid-cols-4 2xl:flex 2xl:flex-row">
+        <div className="grid grid-cols-3 items-center gap-2 p-2 border-2 max-[450px]:grid-cols-2 sm:grid-cols-4 xl:grid-cols-5 ">
             {pokemonWeaknessDiv}
         </div>
     )
