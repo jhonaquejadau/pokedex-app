@@ -12,10 +12,14 @@
 Let's take a overview about the project and it's features.
 
 ### `Pokedex`
-
-<img src="src/assets/images/search.PNG" alt="search" />
-<img src="src/assets/images/typeslider.PNG" alt="typeslider" />
+* Pokedex
 <img src="src/assets/images/pokedex.PNG" alt="pokedex" />
+
+* Use type slider to filter pokemons
+<img src="src/assets/images/typeslider.PNG" alt="typeslider" />
+
+* Use input to search pokemon by name 
+<img src="src/assets/images/search.PNG" alt="search" />
 
 ### `Pokemon Information`
 <img src="src/assets/images/pokemoninfo.PNG" alt="pokemoninfo" />
