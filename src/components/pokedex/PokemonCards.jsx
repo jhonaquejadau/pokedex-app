@@ -36,8 +36,8 @@ export const PokemonCards = ({pokemons}) => {
                 <div key={card.id} className={`${card.types[0].type.name} relative flex flex-col items-center p-4 transition duration-100 hover:scale-[98%] w-[100%] h-[100%] border-4`}>
                     <div className="absolute top-0 left-0 font-bold text-lg text-slate-100">#{card.id}</div>
                     <p className="text-white capitalize text-3xl max-[640px]:text-2xl">{card.name}</p>
-                    <div className="w-[12em] max-[640px]:w-[8em]">
-                        <img className="w-full h-[12em] drop-shadow-[10px_10px_4px_rgba(0,0,0,0.25)] max-[640px]:m-0 shadow p-2 hover:scale-110" src={card.img} alt={card.name}/>
+                    <div className="w-[12em] w-[12em] ">
+                        <img className="w-[100%] h-[100%]  drop-shadow-[10px_10px_4px_rgba(0,0,0,0.25)] max-[640px]:m-0 shadow p-2 hover:scale-110" src={card.img} alt={card.name}/>
                     </div>
                     <div className="flex flex-row mt-2 shadow p-2">
                         {classes}
