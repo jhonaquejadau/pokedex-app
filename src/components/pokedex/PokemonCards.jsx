@@ -4,9 +4,7 @@ import { icons } from "../../assets/icons/icons";
 
 export const PokemonCards = ({pokemons}) => {
 
-    console.log('NEW POKEMON')
-    console.log(pokemons)
- 
+
     let condition = [];
     if (pokemons){
         if(pokemons.array){

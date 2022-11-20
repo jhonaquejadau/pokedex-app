@@ -10,9 +10,6 @@ import {AiOutlineClose} from "react-icons/ai"
 
 export const PokemonInfo = ({pokemons, setPokemons}) => {
 
-    console.log('NEW POKEMON')
-    console.log(pokemons)
-    
     const {name} = useParams();
     const [pokemonSpecies, setPokemonSpecies] = useState({});
     const filterPokemon = pokemons.pokemon.length > 0 && pokemons.pokemon.filter(pokemon => pokemon.name === name);

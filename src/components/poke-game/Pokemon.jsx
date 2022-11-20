@@ -27,7 +27,7 @@ export const Pokemon = ({pokemons}) => {
     return (
         <>
             {pokemon && (
-                <div className={`${pokemon[random].background} flex flex-col justify-around items-center w-full p-4`}>
+                <div className={`${pokemon[random].background} flex flex-col justify-around items-center w-full h-full p-4`}>
                     
                     {/* RANDOM POKEMON */}
                     <div onClick={handleRandom} className="flex flex-col justify-around items-center shadow rounded p-2 w-fit fixed top-5 left-5">
@@ -37,21 +37,21 @@ export const Pokemon = ({pokemons}) => {
 
                     {/* POKEMON INFO */}
                     <div className="flex flex-col justify-center items-center w-[100%] min-[900px]:w-[90%] min-[900px]:flex-row">
-                        <div className="flex flex-col items-center items-center border-4 min-[900px]:w-[40%]">
+                        <div className="flex flex-col items-center items-center min-[900px]:w-[40%]">
                             <p className="text-slate-100 font-bold uppercase text-4xl">{ pokemon[random].name}</p>
                             <img className="shadow-xl rounded-xl w-[25em] h-[25em]" src={pokemon[random].img} alt={pokemon[random].name} />
                         </div>
 
                         <div className="flex flex-col justify-center items-center w-[100%] h-full min-[900px]:w-[60%]">
                             {/* ABILITIES */}
-                            <div className="flex flex-col px-8 py-2 shadow-xl text-center">
+                            <div className="flex flex-col px-8 py-2 shadow-xl text-center border-2 rounded">
                                 <p className="text-6xl font-bold text-slate-200 opacity-40 uppercase">abilities</p>
                                 <div className="flex flex-row justify-around items-center">
                                     {abilities}
                                 </div>
                             </div>
                             {/* STATS */}
-                            <div className="w-[600px] p-4 shadow-xl max-[630px]:w-[400px] max-[500px]:w-[350px] max-[420px]:w-[300px] mt-2 border-2">
+                            <div className="w-[600px] p-4 shadow-xl max-[630px]:w-[400px] max-[500px]:w-[350px] max-[420px]:w-[300px] mt-2">
                                     <p className="text-6xl font-bold text-slate-200 opacity-40 uppercase">stats</p>
                                     {/* <PokemonStats pokemon={pokemon}/> */}
                                     {PokemonStats(pokemon[random])}
