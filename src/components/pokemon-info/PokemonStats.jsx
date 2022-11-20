@@ -1,7 +1,7 @@
 import React from "react";
 import ProgressBar from "@ramonak/react-progress-bar";
 
-export const PokemonStats = ({pokemon}) => {
+export const PokemonStats = (pokemon) => {
 
     const types = {
         normal: "#a5a5a5",

@@ -9,6 +9,9 @@ import { PokemonWeakness } from "../components/pokemon-info/PokemonWeakness";
 import {AiOutlineClose} from "react-icons/ai"
 
 export const PokemonInfo = ({pokemons, setPokemons}) => {
+
+    console.log('NEW POKEMON')
+    console.log(pokemons)
     
     const {name} = useParams();
     const [pokemonSpecies, setPokemonSpecies] = useState({});
@@ -16,8 +19,6 @@ export const PokemonInfo = ({pokemons, setPokemons}) => {
     const pokemon = pokemons.change ? pokemons.change[0] : filterPokemon[0];
     const id = pokemon && pokemon.id
 
-    console.log('pokemon')
-    console.log(pokemon)
     //FETCHING POKEMON SPECIES
     
     async function getEvolutions () {
@@ -42,6 +43,14 @@ export const PokemonInfo = ({pokemons, setPokemons}) => {
     useEffect(() => {
         id && getEvolutions()
     }, [id])
+
+    const handleResetData = () => {
+        setPokemons( () => {
+            return {
+                pokemon: pokemons.pokemon
+            }
+        })
+    }
 
     const weightKg = pokemon && (pokemon.weight / 10);
     const heightMts = pokemon && (pokemon.height / 10);
@@ -69,7 +78,7 @@ export const PokemonInfo = ({pokemons, setPokemons}) => {
                 <div className="my-6 mx-6 p-4 mx-auto shadow rounded-xl border-4">
 
                     <Link to="/pokedex/">
-                        <button className="text-2xl shadow"><AiOutlineClose /></button> 
+                        <button onClick={handleResetData} className="text-2xl shadow"><AiOutlineClose /></button> 
                     </Link>
 
                     {/* POKEMON INFO, IMAGES AND STATS CONTAINER */}
@@ -115,7 +124,8 @@ export const PokemonInfo = ({pokemons, setPokemons}) => {
                             {/* STYLING POKEMON STATS */}
                             <div className="w-[600px] p-4 shadow-xl max-[630px]:w-[400px] max-[500px]:w-[350px] max-[420px]:w-[300px]">
                                 <p className={`${pokemon && pokemon.background}-text text-center text-3xl font-bold`}>Pokemon Stats</p>
-                                <PokemonStats pokemon={pokemon}/>
+                                {/* <PokemonStats pokemon={pokemon}/> */}
+                                {PokemonStats(pokemon)}
                             </div>
 
                         </div>
