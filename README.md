@@ -11,6 +11,12 @@
 
 Let's take a overview about the project and it's features.
 
+### `Home Page`
+<img src="src/assets/images/home.PNG" alt="home" />
+
+### `Pokedex Options`
+<img src="src/assets/images/pokedexoptions.PNG" alt="pokedexoptions" />
+
 ### `Pokedex`
 * Pokedex
 <img src="src/assets/images/pokedex.PNG" alt="pokedex" />
@@ -39,7 +45,7 @@ Let's take a overview about the project and it's features.
 # Versions
 
 **v1.4**
-* Update with gen 8 (905 pokemons).
+* Update pokedex with gen 905 pokemons.
 * Context API.
 * Cleaned code.
 * Animations in home page.
@@ -66,10 +72,10 @@ Let's take a overview about the project and it's features.
 
 # Getting Started:
 
-**Repository : [PokeDex App](https://github.com/jhonaquejadau/pokedex-app)**
+**Repository : [jhonaquejadau](https://github.com/jhonaquejadau/pokedex-app)**
 
 # Credits
-Thanks to [PokéAPI.co](https://github.com/PokeAPI/pokeapi) for the API. [duiker101](https://github.com/duiker101/pokemon-type-svg-icons) for icons. To Pokemon Compnay for hard work dedicated in creating the most popular games in history.
+Thanks to [PokéAPI.co](https://github.com/PokeAPI/pokeapi) for the awesome API. [duiker101](https://github.com/duiker101/pokemon-type-svg-icons) for cute icons. [Pokemon Company](https://www.pokemon.com/el/) for hard work dedicated in creating one of the most popular games in history.
 
 # Copyright Note
 This is a personal project, non-commercial. This project is jut for improve my skills using react js, taileind js, fetching API and more. This is a fan-made app. Therefore, I appreciated if you can share with your friends and give me a like in my repository. Just enjoy the applications.
