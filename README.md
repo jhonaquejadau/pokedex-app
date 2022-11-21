@@ -12,7 +12,7 @@
 Let's take a overview about the project and it's features.
 
 ### `Home Page`
-<img src="src/assets/images/home.PNG" alt="home" />
+<img src="src/assets/images/home.png" alt="home" />
 
 ### `Pokedex Options`
 <img src="src/assets/images/pokedexoptions.PNG" alt="pokedexoptions" />
