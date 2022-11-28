@@ -2,6 +2,8 @@ import {useState, useEffect } from "react";
 import {Routes,Route} from "react-router-dom"
 import './App.css';
 
+// import {pokemon} from "./pokemon"
+
 import { Home } from './pages/Home';
 import { Pokedex } from "./pages/Pokedex";
 import { PokemonInfo } from "./pages/PokemonInfo";
@@ -50,7 +52,7 @@ function App() {
   useEffect(() => {
     getPokemons()
   }, [])
-
+    
   return (
     <div>
       <Routes>
