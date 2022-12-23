@@ -108,7 +108,7 @@ export const SearchPokemon = ({pokemons, setPokemons}) => {
     return (
         <div className="flex flex-col items-center shadow-xl rounded-xl w-[80%] mb-4 p-4 max-[1000px]:w-[100%]">
             <h2 className="text-3xl text-slate-400 font-bold mb-2 w-[90%] text-center max-[800px]:text-2xl">SELECT SEARCH THAT YOU MOST LIKE</h2>
-            <Link to="/pokedex-options">
+            <Link to="/">
                 <button className="text-xl py-1 px-6 rounded-xl capitalize bg-cyan-500 my-2 text-slate-200 ">go back to options!!</button>
             </Link>
             <div className="flex flex-col justify-around items-center p-4 shadow-xl w-[90%] max-[520px]:shadow-none max-[520px]:w-[100%] max-[520px]:p-0 xl:border-4 xl:w-[80%] xl:flex-row ">

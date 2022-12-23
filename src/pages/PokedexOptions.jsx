@@ -35,9 +35,6 @@ export const PokedexOptions = () => {
                 <img className="App-logo w-[10%]" src={superball} alt="superball" />
                 <img className="App-logo w-[10%]" src={ultra} alt="ultra" />
                 <img className="App-logo w-[10%]" src={master} alt="master" />
-                {/* <div className="w-[10em] h-[10em] grass">
-                    <img src={require('../assets/icons/bug.svg').default} />
-                </div> */}
             </div>
 
         </div>
