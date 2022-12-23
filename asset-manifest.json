@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/pokedex-app/static/css/main.43c7058e.css",
-    "main.js": "/pokedex-app/static/js/main.0505e8c4.js",
+    "main.css": "/pokedex-app/static/css/main.e824dcbd.css",
+    "main.js": "/pokedex-app/static/js/main.1a92cf35.js",
     "static/js/787.d2388226.chunk.js": "/pokedex-app/static/js/787.d2388226.chunk.js",
     "static/media/master.png": "/pokedex-app/static/media/master.272c9e50798c341e48d1.png",
     "static/media/poke.png": "/pokedex-app/static/media/poke.41e59d842ec68765738e.png",
@@ -28,12 +28,12 @@
     "static/media/electric.svg": "/pokedex-app/static/media/electric.bc35c5a3faf04b605c00967b94e93693.svg",
     "static/media/grass.svg": "/pokedex-app/static/media/grass.e09623e3345d5bf5286f5323dd923c60.svg",
     "static/media/normal.svg": "/pokedex-app/static/media/normal.2ba66dd583ebf70eb414a0cfd20a48be.svg",
-    "main.43c7058e.css.map": "/pokedex-app/static/css/main.43c7058e.css.map",
-    "main.0505e8c4.js.map": "/pokedex-app/static/js/main.0505e8c4.js.map",
+    "main.e824dcbd.css.map": "/pokedex-app/static/css/main.e824dcbd.css.map",
+    "main.1a92cf35.js.map": "/pokedex-app/static/js/main.1a92cf35.js.map",
     "787.d2388226.chunk.js.map": "/pokedex-app/static/js/787.d2388226.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.43c7058e.css",
-    "static/js/main.0505e8c4.js"
+    "static/css/main.e824dcbd.css",
+    "static/js/main.1a92cf35.js"
   ]
 }
