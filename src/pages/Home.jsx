@@ -3,11 +3,6 @@ import { Link } from "react-router-dom"
 
 
 import pokemon from "../assets/pokemon.png"
-// import pokeball from "../assets/pokeball.png"
-// import poke from "../assets/poke.png"
-// import superball from "../assets/superball.png"
-// import master from "../assets/master.png"
-// import ultra from "../assets/ultra.png"
 
 export const Home = () => {
     return (
@@ -44,15 +39,7 @@ export const Home = () => {
                         <p className="italic capitalize">coming soon</p>
                     </div>
                 </div>
-                {/* <img className=" w-[4em] top-0 App-logo pokeball-move" src={pokeball} alt="pokeball" /> */}
 
-
-                {/* <div className="flex flex-row justify-around items-center w-[90%] max-[900px]:w-[100%]">
-                    <img className="App-logo w-[10%]" src={poke} alt="poke" />
-                    <img className="App-logo w-[10%]" src={superball} alt="superball" />
-                    <img className="App-logo w-[10%]" src={ultra} alt="ultra" />
-                    <img className="App-logo w-[10%]" src={master} alt="master" />
-                </div> */}
             </div>            
         </div>
     )

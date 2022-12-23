@@ -38,7 +38,9 @@ export const Pokemon = ({pokemons}) => {
                     <div className="flex flex-col justify-center items-center w-[100%] min-[900px]:w-[90%] min-[900px]:flex-row">
                         <div className="flex flex-col items-center items-center min-[900px]:w-[40%]">
                             <p className="text-slate-100 font-bold uppercase text-4xl">{ pokemon[random].name}</p>
-                            <img className="shadow-xl rounded-xl w-[25em] h-[25em] max-[900px]:w-[20em] max-[900px]:h-[20em]" src={pokemon[random].img} alt={pokemon[random].name} />
+                            <Link to={`/pokedex/${pokemon[random].name}`}>
+                                <img className="shadow-xl rounded-xl w-[25em] h-[25em] max-[900px]:w-[20em] max-[900px]:h-[20em]" src={pokemon[random].img} alt={pokemon[random].name} />
+                            </Link>
                         </div>
 
                         <div className="flex flex-col justify-center items-center w-[100%] h-full min-[900px]:w-[60%]">

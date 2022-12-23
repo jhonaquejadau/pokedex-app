@@ -9,7 +9,6 @@ import { PokemonWeakness } from "../components/pokemon-info/PokemonWeakness";
 import {AiOutlineClose} from "react-icons/ai"
 
 export const PokemonInfo = ({pokemons, setPokemons}) => {
-    console.log(pokemons)
     const {name} = useParams();
     const [pokemonSpecies, setPokemonSpecies] = useState({});
     const filterPokemon = pokemons.pokemon.length > 0 && pokemons.pokemon.filter(pokemon => pokemon.name === name);
@@ -62,7 +61,7 @@ export const PokemonInfo = ({pokemons, setPokemons}) => {
             </div>
         )
     })
- 
+
     return ( 
         <>
             { pokemons.pokemon.length === 0  ? 
@@ -75,7 +74,7 @@ export const PokemonInfo = ({pokemons, setPokemons}) => {
                 <div className="my-6 mx-6 p-4 mx-auto shadow rounded-xl border-4">
 
                     <Link to="/pokedex/">
-                        <button onClick={handleResetData} className="text-2xl shadow"><AiOutlineClose /></button> 
+                        <button onClick={handleResetData} className="text-2xl shadow mr-[2em]"><AiOutlineClose /></button> 
                     </Link>
 
                     {/* POKEMON INFO, IMAGES AND STATS CONTAINER */}
@@ -121,7 +120,6 @@ export const PokemonInfo = ({pokemons, setPokemons}) => {
                             {/* STYLING POKEMON STATS */}
                             <div className="w-[600px] p-4 shadow-xl max-[630px]:w-[400px] max-[500px]:w-[350px] max-[420px]:w-[300px]">
                                 <p className={`${pokemon && pokemon.background}-text text-center text-3xl font-bold`}>Pokemon Stats</p>
-                                {/* <PokemonStats pokemon={pokemon}/> */}
                                 {PokemonStats(pokemon)}
                             </div>
 
@@ -141,12 +139,6 @@ export const PokemonInfo = ({pokemons, setPokemons}) => {
                                 name={name}
                             />
                         </div>
-                        {/* <PokemonEvolutions 
-                            species={pokemonSpecies} 
-                            pokemons={pokemons}
-                            setPokemons={setPokemons} 
-                            name={name}
-                        /> */}
                         {PokemonEvolutions(pokemons, setPokemons, pokemonSpecies, name)}
                     </div>
 

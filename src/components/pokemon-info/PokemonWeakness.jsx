@@ -42,7 +42,7 @@ export const PokemonWeakness = ({pokemons, name, setPokemons}) => {
         return (
             <Link to="/pokedex">
                 <div 
-                    key={index+1} 
+                    key={index + 1} 
                     className={`${weakness.name} rounded-xl w-[5em] text-center text-slate-100 cursor-pointer`}
                     onClick={() => handleFilterTypes(weakness.name)}
                 >
